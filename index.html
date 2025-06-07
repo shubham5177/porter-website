@@ -1,0 +1,213 @@
+/* Success/Error Messages */
+        .message {
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            display: none;
+            backdrop-filter: blur(10px);
+        }
+
+        .message.success {
+            background: rgba(0, 255, 136, 0.<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Porter Services - Professional Delivery & Pickup</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/emailjs-com/3.2.0/email.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">🚚 Porter Services</div>
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#booking">Book Now</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>Professional Porter Services</h1>
+                <p>Reliable luggage pickup, parcel delivery, and moving assistance at your doorstep</p>
+                <a href="#booking" class="cta-button">Book Service Now</a>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="services">
+            <div class="container">
+                <h2>Our Services</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">🧳</div>
+                        <h3>Luggage Pickup & Delivery</h3>
+                        <p>Professional luggage handling from hotels, airports, or your location. Safe and secure transportation with real-time tracking.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">📦</div>
+                        <h3>Parcel Delivery</h3>
+                        <p>Express parcel delivery service for documents, packages, and important items. Same-day delivery available.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">🏠</div>
+                        <h3>Moving Assistance</h3>
+                        <p>Professional moving help for small to medium relocations. Furniture assembly and disassembly included.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">⚡</div>
+                        <h3>Express Service</h3>
+                        <p>Urgent deliveries and pickups with our express service. Available 24/7 for emergency situations.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">🏢</div>
+                        <h3>Corporate Services</h3>
+                        <p>Bulk deliveries, office relocations, and corporate logistics. Special rates for business clients.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">🚗</div>
+                        <h3>Vehicle Transport</h3>
+                        <p>Secure vehicle transportation for cars, motorcycles, and other vehicles. Door-to-door service available.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Booking Section -->
+        <section id="booking" class="booking">
+            <div class="container">
+                <h2>Book Your Service</h2>
+                <div class="booking-container">
+                    <div class="booking-form">
+                        <form id="bookingForm">
+                            <div class="message success" id="bookingSuccess">
+                                Booking request submitted successfully! We'll contact you shortly.
+                            </div>
+                            <div class="message error" id="bookingError">
+                                Error submitting booking. Please try again.
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="service">Service Type</label>
+                                <select id="service" name="service" required>
+                                    <option value="">Select a service</option>
+                                    <option value="luggage">Luggage Pickup & Delivery</option>
+                                    <option value="parcel">Parcel Delivery</option>
+                                    <option value="moving">Moving Assistance</option>
+                                    <option value="express">Express Service</option>
+                                    <option value="corporate">Corporate Services</option>
+                                    <option value="vehicle">Vehicle Transport</option>
+                                </select>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="pickup-date">Pickup Date</label>
+                                    <input type="date" id="pickup-date" name="pickup-date" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="pickup-time">Pickup Time</label>
+                                    <input type="time" id="pickup-time" name="pickup-time" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="pickup-location">Pickup Location</label>
+                                <input type="text" id="pickup-location" name="pickup-location" placeholder="Enter pickup address" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="delivery-location">Delivery Location</label>
+                                <input type="text" id="delivery-location" name="delivery-location" placeholder="Enter delivery address" required>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="name">Your Name</label>
+                                    <input type="text" id="name" name="name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Phone Number</label>
+                                    <input type="tel" id="phone" name="phone" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="notes">Special Instructions</label>
+                                <textarea id="notes" name="notes" rows="3" placeholder="Any special requirements or notes..."></textarea>
+                            </div>
+
+                            <button type="submit" class="btn">Submit Booking Request</button>
+                        </form>
+                    </div>
+
+                    <div class="map-container">
+                        <div id="map"></div>
+                        <div class="map-info">
+                            <p><strong>Interactive Service Map</strong></p>
+                            <p>🟢 Green marker = Pickup location | 🔴 Red marker = Delivery location</p>
+                            <p>Click on the map to set your pickup and delivery locations</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2>Contact Us</h2>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="message success" id="contactSuccess">
+                            Message sent successfully! We'll get back to you soon.
+                        </div>
+                        <div class="message error" id="contactError">
+                            Error sending message. Please try again.
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contact-name">Name</label>
+                            <input type="text" id="contact-name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-email">Email</label>
+                            <input type="email" id="contact-email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-subject">Subject</label>
+                            <input type="text" id="contact-subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Porter Services. All rights reserved. Professional delivery and logistics solutions.</p>
+        </div>
+    </footer>
+
+    
+</body>
+</html>
